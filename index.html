@@ -6,7 +6,6 @@
     <title>Mi Tienda Online</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <style>
         /* ===== RESET Y ESTILOS GENERALES ===== */
         * {
@@ -20,11 +19,6 @@
             background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
-            transition: margin-left 0.3s;
-        }
-
-        body.menu-open {
-            margin-left: 280px;
         }
 
         .container {
@@ -169,76 +163,55 @@
             justify-content: center;
         }
 
-        /* ===== MENU LATERAL ===== */
-        /* ===== MENU LATERAL ===== */
-.sidebar-menu {
-    position: fixed;
-    top: 0;
-    left: -280px; /* Siempre oculto inicialmente */
-    width: 280px;
-    height: 100vh;
-    background: white;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-    transition: left 0.3s;
-    overflow-y: auto;
-}
+        /* ===== MENU LATERAL RESPONSIVE ===== */
+        .sidebar-menu {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+        }
 
-.sidebar-menu.open {
-    left: 0; /* Se abre moviéndose a la derecha */
-}
+        .sidebar-menu.open {
+            left: 0;
+        }
 
-/* Cuando el menú está abierto, desplaza el contenido del body */
-body.menu-open {
-    margin-left: 280px;
-}
+        .menu-header {
+            padding: 20px;
+            background: #4CAF50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* Header del menú siempre visible */
-.menu-header {
-    padding: 20px;
-    background: #4CAF50;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .close-menu {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
 
-.close-menu {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
 
-/* Botón toggle del menú - Siempre visible */
-.menu-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Transición suave para el contenido */
-header, .hero, .products-section, footer {
-    transition: margin-left 0.3s;
-}
-
-/* Ajuste responsive */
-@media (max-width: 768px) {
-    .sidebar-menu {
-        width: 250px;
-    }
-    
-    body.menu-open {
-        margin-left: 250px;
-    }
-}
+        .menu-overlay.active {
+            display: block;
+        }
 
         .menu-categories {
             padding: 20px;
@@ -648,7 +621,7 @@ header, .hero, .products-section, footer {
             min-width: 150px;
         }
 
-        /* ===== MODAL CARRITO ===== */
+        /* ===== MODAL CARRITO (CSS COMPLETO) ===== */
         .cart-modal .modal-content {
             max-width: 600px;
         }
@@ -735,12 +708,19 @@ header, .hero, .products-section, footer {
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .quantity-btn:hover {
+            background: #f0f0f0;
         }
 
         .quantity {
             font-weight: 600;
             min-width: 30px;
             text-align: center;
+            font-size: 16px;
         }
 
         .remove-btn {
@@ -750,6 +730,12 @@ header, .hero, .products-section, footer {
             cursor: pointer;
             padding: 5px;
             margin-left: 10px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .remove-btn:hover {
+            color: #d84315;
         }
 
         .cart-total {
@@ -760,6 +746,7 @@ header, .hero, .products-section, footer {
             align-items: center;
             font-size: 20px;
             font-weight: 700;
+            background: #f9f9f9;
         }
 
         .cart-total-amount {
@@ -767,13 +754,16 @@ header, .hero, .products-section, footer {
         }
 
         .cart-buttons {
-            padding: 0 20px 20px;
+            padding: 20px;
             display: flex;
             gap: 10px;
+            background: white;
         }
 
         .cart-buttons .btn {
             flex: 1;
+            padding: 12px;
+            font-size: 16px;
         }
 
         /* ===== NOTIFICACION ===== */
@@ -796,7 +786,7 @@ header, .hero, .products-section, footer {
             transform: translateX(0);
         }
 
-        /* ===== FOOTER ===== */
+        /* ===== FOOTER (CSS COMPLETO) ===== */
         footer {
             background: #333;
             color: white;
@@ -821,6 +811,13 @@ header, .hero, .products-section, footer {
             color: #bbb;
             line-height: 1.8;
             margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .footer-column p i {
+            margin-right: 10px;
+            color: #4CAF50;
+            width: 20px;
         }
 
         .social-links {
@@ -839,11 +836,13 @@ header, .hero, .products-section, footer {
             color: white;
             border-radius: 50%;
             text-decoration: none;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            font-size: 18px;
         }
 
         .social-links a:hover {
             background: #4CAF50;
+            transform: translateY(-3px);
         }
 
         .copyright {
@@ -898,11 +897,6 @@ header, .hero, .products-section, footer {
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            body.menu-open {
-                margin-left: 0;
-                overflow: hidden;
-            }
-
             .menu-toggle {
                 display: block;
             }
@@ -919,6 +913,11 @@ header, .hero, .products-section, footer {
 
             .hero h1 {
                 font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+                padding: 0 15px;
             }
 
             .products-grid {
@@ -960,6 +959,38 @@ header, .hero, .products-section, footer {
             .modal-actions .btn {
                 min-width: 120px;
             }
+
+            .cart-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+
+            .cart-item-img {
+                margin-right: 0;
+                margin-bottom: 10px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .cart-item-actions {
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .cart-buttons {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -967,18 +998,22 @@ header, .hero, .products-section, footer {
                 grid-template-columns: 1fr;
             }
 
-            .cart-item {
-                flex-direction: column;
-                text-align: center;
+            .modal-content {
+                max-width: 95%;
             }
 
-            .cart-item-img {
-                margin-right: 0;
-                margin-bottom: 10px;
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 15px;
+                right: 15px;
             }
+        }
 
-            .cart-item-actions {
-                justify-content: center;
+        @media (min-width: 769px) {
+            .menu-overlay {
+                display: none !important;
             }
         }
     </style>
@@ -988,6 +1023,9 @@ header, .hero, .products-section, footer {
     <div class="loader" id="loader">
         <div class="spinner"></div>
     </div>
+
+    <!-- Overlay para menú móvil -->
+    <div class="menu-overlay" id="menuOverlay"></div>
 
     <!-- WhatsApp Flotante -->
     <a href="https://wa.me/5351454636" class="whatsapp-float" target="_blank">
@@ -1002,22 +1040,8 @@ header, .hero, .products-section, footer {
         </div>
         <div class="menu-categories">
             <h4>Categorías</h4>
-            <ul class="category-list">
-                <li class="category-item active" data-category="todos">
-                    <i class="fas fa-th-large"></i> Todos los productos
-                </li>
-                <li class="category-item" data-category="tecnologia">
-                    <i class="fas fa-laptop"></i> Tecnología
-                </li>
-                <li class="category-item" data-category="ropa">
-                    <i class="fas fa-tshirt"></i> Ropa y Calzado
-                </li>
-                <li class="category-item" data-category="hogar">
-                    <i class="fas fa-home"></i> Hogar
-                </li>
-                <li class="category-item" data-category="smartwatch">
-                    <i class="fas fa-clock"></i> Smartwatch
-                </li>
+            <ul class="category-list" id="categoryList">
+                <!-- Se genera dinámicamente -->
             </ul>
         </div>
     </div>
@@ -1072,178 +1096,7 @@ header, .hero, .products-section, footer {
             </div>
             
             <div class="products-grid" id="productsGrid">
-                <!-- ============================================ -->
-                <!-- PRODUCTO 1 -->
-                <!-- ============================================ -->
-                <div class="product-card" data-id="1" data-category="tecnologia" data-search="iphone smartphone apple movil" onclick="showProductDetails(1)">
-                    <div class="product-badge">Oferta</div>
-                    <div class="product-images">
-                        <img src="images/telefono.png" alt="Producto 1" width="300">" 
-                             alt="iPhone 14 Pro" 
-                             class="product-main-img">
-                        <div class="image-nav">
-                            <div class="image-dot active" data-index="0"></div>
-                            <div class="image-dot" data-index="1"></div>
-                            <div class="image-dot" data-index="2"></div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">iPhone 14 Pro Max 256GB</h3>
-                        <div class="product-price">
-                            <span class="current-price">$1,299.99</span>
-                            <!--<span class="old-price">$1,499.99</span> -->
-                        </div>
-                        <div class="product-category">
-                            <i class="fas fa-laptop"></i> Tecnología
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-cart" onclick="event.stopPropagation(); addToCart(1, 'iPhone 14 Pro Max 256GB', 1299.99, 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&q=80')">
-                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
-                            </button>
-                            <button class="btn btn-whatsapp" onclick="event.stopPropagation(); contactProductWhatsApp(1)">
-                                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ============================================ -->
-                <!-- PRODUCTO 2 -->
-                <!-- ============================================ -->
-                <div class="product-card" data-id="2" data-category="ropa" data-search="zapatillas adidas deporte running" onclick="showProductDetails(2)">
-                    <div class="product-badge">Nuevo</div>
-                    <div class="product-images">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80" 
-                             alt="Zapatillas Adidas" 
-                             class="product-main-img">
-                        <div class="image-nav">
-                            <div class="image-dot active" data-index="0"></div>
-                            <div class="image-dot" data-index="1"></div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Zapatillas Adidas Ultraboost</h3>
-                        <div class="product-price">
-                            <span class="current-price">$149.99</span>
-                        </div>
-                        <div class="product-category">
-                            <i class="fas fa-tshirt"></i> Ropa y Calzado
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-cart" onclick="event.stopPropagation(); addToCart(2, 'Zapatillas Adidas Ultraboost', 149.99, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80')">
-                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
-                            </button>
-                            <button class="btn btn-whatsapp" onclick="event.stopPropagation(); contactProductWhatsApp(2)">
-                                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ============================================ -->
-                <!-- PRODUCTO 3 -->
-                <!-- ============================================ -->
-                <div class="product-card" data-id="3" data-category="tecnologia" data-search="laptop dell computadora portatil" onclick="showProductDetails(3)">
-                    <div class="product-badge">Oferta</div>
-                    <div class="product-images">
-                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80" 
-                             alt="Laptop Dell" 
-                             class="product-main-img">
-                        <div class="image-nav">
-                            <div class="image-dot active" data-index="0"></div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Laptop Dell XPS 15 i7</h3>
-                        <div class="product-price">
-                            <span class="current-price">$1,899.99</span>
-                            <span class="old-price">$2,199.99</span>
-                        </div>
-                        <div class="product-category">
-                            <i class="fas fa-laptop"></i> Tecnología
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-cart" onclick="event.stopPropagation(); addToCart(3, 'Laptop Dell XPS 15 i7', 1899.99, 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80')">
-                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
-                            </button>
-                            <button class="btn btn-whatsapp" onclick="event.stopPropagation(); contactProductWhatsApp(3)">
-                                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ============================================ -->
-                <!-- PRODUCTO 4 -->
-                <!-- ============================================ -->
-                <div class="product-card" data-id="4" data-category="smartwatch" data-search="reloj smartwatch apple watch" onclick="showProductDetails(4)">
-                    <div class="product-images">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" 
-                             alt="Apple Watch" 
-                             class="product-main-img">
-                        <div class="image-nav">
-                            <div class="image-dot active" data-index="0"></div>
-                            <div class="image-dot" data-index="1"></div>
-                            <div class="image-dot" data-index="2"></div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Apple Watch Series 8</h3>
-                        <div class="product-price">
-                            <span class="current-price">$399.99</span>
-                        </div>
-                        <div class="product-category">
-                            <i class="fas fa-clock"></i> Smartwatch
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-cart" onclick="event.stopPropagation(); addToCart(4, 'Apple Watch Series 8', 399.99, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80')">
-                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
-                            </button>
-                            <button class="btn btn-whatsapp" onclick="event.stopPropagation(); contactProductWhatsApp(4)">
-                                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ============================================ -->
-                <!-- PRODUCTO 5 -->
-                <!-- ============================================ -->
-                <div class="product-card" data-id="5" data-category="ropa" data-search="camiseta nike deportiva" onclick="showProductDetails(5)">
-                    <div class="product-badge">Popular</div>
-                    <div class="product-images">
-                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80" 
-                             alt="Camiseta Nike" 
-                             class="product-main-img">
-                        <div class="image-nav">
-                            <div class="image-dot active" data-index="0"></div>
-                            <div class="image-dot" data-index="1"></div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Camiseta Nike Dri-FIT</h3>
-                        <div class="product-price">
-                            <span class="current-price">$39.99</span>
-                            <span class="old-price">$49.99</span>
-                        </div>
-                        <div class="product-category">
-                            <i class="fas fa-tshirt"></i> Ropa
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-cart" onclick="event.stopPropagation(); addToCart(5, 'Camiseta Nike Dri-FIT', 39.99, 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80')">
-                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
-                            </button>
-                            <button class="btn btn-whatsapp" onclick="event.stopPropagation(); contactProductWhatsApp(5)">
-                                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ============================================ -->
-                <!-- AQUÍ PEGAS NUEVOS PRODUCTOS -->
-                <!-- ============================================ -->
-                
+                <!-- Se genera dinámicamente -->
             </div>
         </div>
     </section>
@@ -1288,7 +1141,7 @@ header, .hero, .products-section, footer {
         <div class="modal-content">
             <button class="modal-close" id="closeProductModal">&times;</button>
             <div class="modal-body" id="productModalBody">
-                <!-- Se llena con JavaScript -->
+                <!-- Se llena dinámicamente -->
             </div>
         </div>
     </div>
@@ -1301,7 +1154,7 @@ header, .hero, .products-section, footer {
                 <button class="modal-close" id="closeCartModal">&times;</button>
             </div>
             <div class="cart-items" id="cartItems">
-                <!-- Se llena con JavaScript -->
+                <!-- Se llena dinámicamente -->
             </div>
             <div class="cart-total">
                 <span>Total:</span>
@@ -1319,82 +1172,102 @@ header, .hero, .products-section, footer {
     <!-- Notificación -->
     <div class="notification" id="notification"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         // ============================================
-        // DATOS DE PRODUCTOS (puedes agregar más aquí)
+        // CONFIGURACIÓN FÁCIL - ¡EDITA AQUÍ!
         // ============================================
-        const productos = {
-            1: {
+
+        // CATEGORÍAS (Agrega nuevas categorías aquí)
+        const categorias = [
+            { id: "todos", nombre: "Todos los productos", icono: "fas fa-th-large" },
+            { id: "tecnologia", nombre: "Tecnología", icono: "fas fa-laptop" },
+            { id: "ropa", nombre: "Ropa y Calzado", icono: "fas fa-tshirt" },
+            { id: "hogar", nombre: "Hogar", icono: "fas fa-home" },
+            { id: "smartwatch", nombre: "Smartwatch", icono: "fas fa-clock" },
+            { id: "telefonos", nombre: "Teléfonos", icono: "fas fa-mobile-alt" }
+        ];
+
+        // PRODUCTOS (Agrega nuevos productos aquí)
+        const productos = [
+            {
                 id: 1,
                 nombre: "iPhone 14 Pro Max 256GB",
                 precio: 1299.99,
-                //precioOriginal: 1499.99,
-                categoria: "tecnologia",
+                precioOriginal: 1499.99,
+                categoria: "telefonos",
                 descripcion: "iPhone 14 Pro Max con Dynamic Island, cámara de 48MP, pantalla Super Retina XDR de 6.7 pulgadas y chip A16 Bionic. Color Space Black. Incluye cargador y funda.",
+                caracteristicas: ["256GB", "iOS 16", "Cámara 48MP", "Pantalla 6.7\"", "A16 Bionic", "Batería de larga duración"],
+                stock: 8,
                 imagenes: [
-                    "images/telefono.png",
-                    "images/telefono.png",
+                    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&q=80",
+                    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&q=80",
                     "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&q=80"
                 ],
-                caracteristicas: ["256GB", "iOS 16", "Cámara 48MP", "Pantalla 6.7\"", "A16 Bionic", "Batería de larga duración"],
-                stock: 8
+                badge: "Oferta",
+                searchTerms: ["iphone", "smartphone", "apple", "movil", "telefono"]
             },
-            2: {
+            {
                 id: 2,
                 nombre: "Zapatillas Adidas Ultraboost",
                 precio: 149.99,
                 categoria: "ropa",
                 descripcion: "Zapatillas para running Adidas Ultraboost con tecnología Boost para máxima amortiguación. Suela Continental para mejor tracción en cualquier superficie. Disponible en tallas 38-44.",
+                caracteristicas: ["Amortiguación Boost", "Suela Continental", "Material transpirable", "Para running"],
+                stock: 15,
                 imagenes: [
                     "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80",
                     "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80"
                 ],
-                caracteristicas: ["Amortiguación Boost", "Suela Continental", "Material transpirable", "Para running"],
-                stock: 15
+                badge: "Nuevo",
+                searchTerms: ["zapatillas", "adidas", "deporte", "running", "calzado"]
             },
-            3: {
+            {
                 id: 3,
                 nombre: "Laptop Dell XPS 15 i7",
                 precio: 1899.99,
                 precioOriginal: 2199.99,
                 categoria: "tecnologia",
                 descripcion: "Laptop Dell XPS 15 con procesador Intel Core i7 de 13va generación, 16GB RAM, 1TB SSD y pantalla 4K OLED táctil. Ideal para diseño, programación y gaming.",
+                caracteristicas: ["i7 13va gen", "16GB RAM", "1TB SSD", "Pantalla 4K OLED", "Windows 11 Pro", "NVIDIA RTX 3050"],
+                stock: 5,
                 imagenes: [
                     "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80"
                 ],
-                caracteristicas: ["i7 13va gen", "16GB RAM", "1TB SSD", "Pantalla 4K OLED", "Windows 11 Pro", "NVIDIA RTX 3050"],
-                stock: 5
+                badge: "Oferta",
+                searchTerms: ["laptop", "dell", "computadora", "portatil"]
             },
-            4: {
+            {
                 id: 4,
                 nombre: "Apple Watch Series 8",
                 precio: 399.99,
                 categoria: "smartwatch",
                 descripcion: "Apple Watch Series 8 GPS 41mm. Monitoreo de frecuencia cardiaca, oxígeno en sangre, sueño y actividad física. Resistente al agua hasta 50 metros.",
+                caracteristicas: ["GPS", "Pantalla Retina", "Resistente al agua", "Monitoreo de salud", "iOS compatible"],
+                stock: 12,
                 imagenes: [
                     "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80",
                     "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80",
                     "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80"
                 ],
-                caracteristicas: ["GPS", "Pantalla Retina", "Resistente al agua", "Monitoreo de salud", "iOS compatible"],
-                stock: 12
+                searchTerms: ["reloj", "smartwatch", "apple watch", "smart"]
             },
-            5: {
+            {
                 id: 5,
                 nombre: "Camiseta Nike Dri-FIT",
                 precio: 39.99,
                 precioOriginal: 49.99,
                 categoria: "ropa",
                 descripcion: "Camiseta deportiva Nike Dri-FIT para hombre. Tecnología que absorbe el sudor y se seca rápido. Disponible en colores negro, blanco y azul. Tallas S, M, L, XL.",
+                caracteristicas: ["Material Dri-FIT", "Absorbe sudor", "Secado rápido", "Tallas S-XL"],
+                stock: 25,
                 imagenes: [
                     "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80",
                     "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80"
                 ],
-                caracteristicas: ["Material Dri-FIT", "Absorbe sudor", "Secado rápido", "Tallas S-XL"],
-                stock: 25
+                badge: "Popular",
+                searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
             }
-        };
+        ];
 
         // ============================================
         // VARIABLES GLOBALES
@@ -1407,36 +1280,45 @@ header, .hero, .products-section, footer {
         // INICIALIZACIÓN
         // ============================================
         document.addEventListener('DOMContentLoaded', function() {
-            // Ocultar loader
             setTimeout(() => {
                 document.getElementById('loader').classList.add('hidden');
             }, 1000);
 
-            // Actualizar contador del carrito
+            // Inicializar categorías
+            renderCategorias();
+            
+            // Inicializar productos
+            renderProductos();
+            
+            // Actualizar carrito
             updateCartCount();
 
             // Event listeners
+            setupEventListeners();
+        });
+
+        // ============================================
+        // SETUP EVENT LISTENERS
+        // ============================================
+        function setupEventListeners() {
+            // Búsqueda
             document.getElementById('searchBtn').addEventListener('click', searchProducts);
             document.getElementById('searchInput').addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') searchProducts();
             });
 
+            // Carrito
             document.getElementById('cartBtn').addEventListener('click', openCart);
             document.getElementById('closeCartBtn').addEventListener('click', closeCart);
             document.getElementById('closeCartModal').addEventListener('click', closeCart);
+
+            // Modal producto
             document.getElementById('closeProductModal').addEventListener('click', closeProductModal);
 
             // Menú lateral
             document.getElementById('menuToggle').addEventListener('click', openMenu);
             document.getElementById('closeMenu').addEventListener('click', closeMenu);
-
-            // Filtros por categoría
-            document.querySelectorAll('.category-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
-                    filterByCategory(category);
-                });
-            });
+            document.getElementById('menuOverlay').addEventListener('click', closeMenu);
 
             // Cerrar modales al hacer clic fuera
             document.querySelectorAll('.modal-overlay').forEach(modal => {
@@ -1448,50 +1330,194 @@ header, .hero, .products-section, footer {
                 });
             });
 
-            // Configurar navegación de imágenes en productos
-            setupImageNavigation();
-        });
+            // Cerrar menú con ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMenu();
+                    closeCart();
+                    closeProductModal();
+                }
+            });
+        }
 
         // ============================================
-        // MENÚ LATERAL
+        // RENDERIZAR CATEGORÍAS DINÁMICAMENTE
+        // ============================================
+        function renderCategorias() {
+            const categoryList = document.getElementById('categoryList');
+            categoryList.innerHTML = '';
+            
+            categorias.forEach(categoria => {
+                const li = document.createElement('li');
+                li.className = `category-item ${categoria.id === currentCategory ? 'active' : ''}`;
+                li.setAttribute('data-category', categoria.id);
+                li.innerHTML = `
+                    <i class="${categoria.icono}"></i> ${categoria.nombre}
+                `;
+                
+                li.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    filterByCategory(category);
+                    closeMenu();
+                });
+                
+                categoryList.appendChild(li);
+            });
+        }
+
+        // ============================================
+        // RENDERIZAR PRODUCTOS DINÁMICAMENTE
+        // ============================================
+        function renderProductos() {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+            
+            // Filtrar productos por categoría actual
+            const productosFiltrados = currentCategory === 'todos' 
+                ? productos 
+                : productos.filter(p => p.categoria === currentCategory);
+            
+            if (productosFiltrados.length === 0) {
+                productsGrid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #666;">
+                        <i class="fas fa-box-open" style="font-size: 50px; margin-bottom: 15px;"></i>
+                        <h3>No hay productos en esta categoría</h3>
+                    </div>
+                `;
+                return;
+            }
+            
+            productosFiltrados.forEach(producto => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.setAttribute('data-id', producto.id);
+                productCard.setAttribute('data-category', producto.categoria);
+                productCard.setAttribute('data-search', producto.searchTerms ? producto.searchTerms.join(' ') : '');
+                
+                productCard.innerHTML = `
+                    ${producto.badge ? `<div class="product-badge">${producto.badge}</div>` : ''}
+                    <div class="product-images">
+                        <img src="${producto.imagenes[0]}" alt="${producto.nombre}" class="product-main-img">
+                        ${producto.imagenes.length > 1 ? `
+                            <div class="image-nav">
+                                ${producto.imagenes.map((_, index) => `
+                                    <div class="image-dot ${index === 0 ? 'active' : ''}" data-index="${index}"></div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${producto.nombre}</h3>
+                        <div class="product-price">
+                            <span class="current-price">$${producto.precio.toFixed(2)}</span>
+                            ${producto.precioOriginal ? `<span class="old-price">$${producto.precioOriginal.toFixed(2)}</span>` : ''}
+                        </div>
+                        <div class="product-category">
+                            <i class="${getCategoryIcon(producto.categoria)}"></i> ${getCategoryName(producto.categoria)}
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-cart" onclick="event.stopPropagation(); addToCart(${producto.id}, '${producto.nombre}', ${producto.precio}, '${producto.imagenes[0]}')">
+                                <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                            </button>
+                            <button class="btn btn-whatsapp" onclick="event.stopPropagation(); contactProductWhatsApp(${producto.id})">
+                                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                // Agregar evento click para mostrar detalles
+                productCard.addEventListener('click', () => showProductDetails(producto.id));
+                
+                // Configurar navegación de imágenes
+                if (producto.imagenes.length > 1) {
+                    setupImageNavigation(productCard, producto);
+                }
+                
+                productsGrid.appendChild(productCard);
+            });
+        }
+
+        // ============================================
+        // FUNCIONES DE AYUDA
+        // ============================================
+        function getCategoryName(categoryId) {
+            const categoria = categorias.find(c => c.id === categoryId);
+            return categoria ? categoria.nombre : categoryId;
+        }
+
+        function getCategoryIcon(categoryId) {
+            const categoria = categorias.find(c => c.id === categoryId);
+            return categoria ? categoria.icono : 'fas fa-box';
+        }
+
+        // ============================================
+        // FUNCIONES DEL MENÚ LATERAL
         // ============================================
         function openMenu() {
             document.getElementById('sidebarMenu').classList.add('open');
-            document.body.classList.add('menu-open');
+            document.getElementById('menuOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeMenu() {
             document.getElementById('sidebarMenu').classList.remove('open');
-            document.body.classList.remove('menu-open');
+            document.getElementById('menuOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
 
         // ============================================
-        // FILTRADO POR CATEGORÍA
+        // FUNCIONES DE FILTRADO
         // ============================================
         function filterByCategory(category) {
             currentCategory = category;
-            
-            // Actualizar estado activo en el menú
-            document.querySelectorAll('.category-item').forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('data-category') === category) {
-                    item.classList.add('active');
-                }
-            });
-            
-            // Filtrar productos
-            const productCards = document.querySelectorAll('.product-card');
-            productCards.forEach(card => {
-                const productCategory = card.getAttribute('data-category');
-                
-                if (category === 'todos' || productCategory === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
+            renderCategorias();
+            renderProductos();
             closeMenu();
+        }
+
+        function searchProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            const productCards = document.querySelectorAll('.product-card');
+            let foundAny = false;
+
+            productCards.forEach(card => {
+                const searchData = card.getAttribute('data-search') || '';
+                const category = card.getAttribute('data-category') || '';
+                const title = card.querySelector('.product-title').textContent.toLowerCase();
+                
+                const matches = searchTerm === '' || 
+                    title.includes(searchTerm) || 
+                    searchData.includes(searchTerm) || 
+                    category.includes(searchTerm);
+
+                const matchesCategory = currentCategory === 'todos' || card.getAttribute('data-category') === currentCategory;
+                
+                card.style.display = (matches && matchesCategory) ? 'block' : 'none';
+                if (matches && matchesCategory) foundAny = true;
+            });
+
+            const productsGrid = document.getElementById('productsGrid');
+            let message = productsGrid.querySelector('.no-results');
+            
+            if (!foundAny && searchTerm !== '') {
+                if (!message) {
+                    message = document.createElement('div');
+                    message.className = 'no-results';
+                    message.style.gridColumn = '1 / -1';
+                    message.style.textAlign = 'center';
+                    message.style.padding = '40px';
+                    message.style.color = '#666';
+                    productsGrid.appendChild(message);
+                }
+                message.innerHTML = `
+                    <i class="fas fa-search" style="font-size: 40px; margin-bottom: 15px; color:#ddd;"></i>
+                    <h3 style="margin-bottom: 10px;">No se encontraron productos</h3>
+                    <p>Intenta con otros términos de búsqueda</p>
+                `;
+            } else if (message) {
+                message.remove();
+            }
         }
 
         // ============================================
@@ -1512,37 +1538,10 @@ header, .hero, .products-section, footer {
                 });
             }
 
-            // Guardar en localStorage
             localStorage.setItem('tienda_carrito', JSON.stringify(cart));
-            
-            // Actualizar contador
             updateCartCount();
-            
-            // Mostrar notificación
             showNotification(`${nombre} agregado al carrito`);
-            
-            // Animar botón del carrito
             animateCartButton();
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            localStorage.setItem('tienda_carrito', JSON.stringify(cart));
-            updateCartCount();
-            updateCartDisplay();
-            showNotification('Producto eliminado del carrito');
-        }
-
-        function updateQuantity(index, change) {
-            cart[index].cantidad += change;
-            
-            if (cart[index].cantidad <= 0) {
-                removeFromCart(index);
-            } else {
-                localStorage.setItem('tienda_carrito', JSON.stringify(cart));
-                updateCartCount();
-                updateCartDisplay();
-            }
         }
 
         function updateCartCount() {
@@ -1558,9 +1557,6 @@ header, .hero, .products-section, footer {
             }, 300);
         }
 
-        // ============================================
-        // MODAL DEL CARRITO
-        // ============================================
         function openCart() {
             updateCartDisplay();
             document.getElementById('cartModal').classList.add('active');
@@ -1618,12 +1614,32 @@ header, .hero, .products-section, footer {
             totalElement.textContent = `$${total.toFixed(2)}`;
         }
 
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('tienda_carrito', JSON.stringify(cart));
+            updateCartCount();
+            updateCartDisplay();
+            showNotification('Producto eliminado del carrito');
+        }
+
+        function updateQuantity(index, change) {
+            cart[index].cantidad += change;
+            
+            if (cart[index].cantidad <= 0) {
+                removeFromCart(index);
+            } else {
+                localStorage.setItem('tienda_carrito', JSON.stringify(cart));
+                updateCartCount();
+                updateCartDisplay();
+            }
+        }
+
         // ============================================
-        // MODAL DETALLES PRODUCTO
+        // FUNCIONES DE PRODUCTOS
         // ============================================
         function showProductDetails(id) {
             currentProductId = id;
-            const producto = productos[id];
+            const producto = productos.find(p => p.id === id);
             
             if (!producto) return;
 
@@ -1632,14 +1648,16 @@ header, .hero, .products-section, footer {
             modalBody.innerHTML = `
                 <div class="modal-images">
                     <img src="${producto.imagenes[0]}" alt="${producto.nombre}" class="main-image" id="mainProductImage">
-                    <div class="thumbnail-images">
-                        ${producto.imagenes.map((img, index) => `
-                            <img src="${img}" 
-                                 alt="${producto.nombre} - Imagen ${index + 1}" 
-                                 class="thumbnail ${index === 0 ? 'active' : ''}"
-                                 onclick="changeProductImage(${index})">
-                        `).join('')}
-                    </div>
+                    ${producto.imagenes.length > 1 ? `
+                        <div class="thumbnail-images">
+                            ${producto.imagenes.map((img, index) => `
+                                <img src="${img}" 
+                                     alt="${producto.nombre} - Imagen ${index + 1}" 
+                                     class="thumbnail ${index === 0 ? 'active' : ''}"
+                                     onclick="changeProductImage(${index})">
+                            `).join('')}
+                        </div>
+                    ` : ''}
                 </div>
                 <div class="modal-info">
                     <h2 class="modal-title">${producto.nombre}</h2>
@@ -1648,7 +1666,7 @@ header, .hero, .products-section, footer {
                         ${producto.precioOriginal ? `<span style="color:#999; text-decoration:line-through; font-size:18px; margin-left:10px;">$${producto.precioOriginal.toFixed(2)}</span>` : ''}
                     </div>
                     <div class="modal-category">
-                        <i class="fas fa-tag"></i> ${producto.categoria.charAt(0).toUpperCase() + producto.categoria.slice(1)}
+                        <i class="fas fa-tag"></i> ${getCategoryName(producto.categoria)}
                     </div>
                     <div class="modal-description">
                         <h4>Descripción</h4>
@@ -1687,13 +1705,11 @@ header, .hero, .products-section, footer {
         }
 
         function changeProductImage(index) {
-            const producto = productos[currentProductId];
+            const producto = productos.find(p => p.id === currentProductId);
             if (!producto || !producto.imagenes[index]) return;
 
-            // Cambiar imagen principal
             document.getElementById('mainProductImage').src = producto.imagenes[index];
             
-            // Actualizar thumbnails activos
             document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
                 thumb.classList.toggle('active', i === index);
             });
@@ -1703,55 +1719,6 @@ header, .hero, .products-section, footer {
             document.getElementById('productModal').classList.remove('active');
             document.body.style.overflow = 'auto';
             currentProductId = null;
-        }
-
-        // ============================================
-        // BÚSQUEDA DE PRODUCTOS
-        // ============================================
-        function searchProducts() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
-            const productCards = document.querySelectorAll('.product-card');
-            let foundAny = false;
-
-            productCards.forEach(card => {
-                const searchData = card.getAttribute('data-search') || '';
-                const category = card.getAttribute('data-category') || '';
-                const title = card.querySelector('.product-title').textContent.toLowerCase();
-                
-                const matches = searchTerm === '' || 
-                    title.includes(searchTerm) || 
-                    searchData.includes(searchTerm) || 
-                    category.includes(searchTerm);
-
-                // También verificar si coincide con la categoría actual
-                const matchesCategory = currentCategory === 'todos' || card.getAttribute('data-category') === currentCategory;
-                
-                card.style.display = (matches && matchesCategory) ? 'block' : 'none';
-                if (matches && matchesCategory) foundAny = true;
-            });
-
-            // Mostrar mensaje si no hay resultados
-            const productsGrid = document.getElementById('productsGrid');
-            let message = productsGrid.querySelector('.no-results');
-            
-            if (!foundAny && searchTerm !== '') {
-                if (!message) {
-                    message = document.createElement('div');
-                    message.className = 'no-results';
-                    message.style.gridColumn = '1 / -1';
-                    message.style.textAlign = 'center';
-                    message.style.padding = '40px';
-                    message.style.color = '#666';
-                    productsGrid.appendChild(message);
-                }
-                message.innerHTML = `
-                    <i class="fas fa-search" style="font-size: 40px; margin-bottom: 15px; color:#ddd;"></i>
-                    <h3 style="margin-bottom: 10px;">No se encontraron productos</h3>
-                    <p>Intenta con otros términos de búsqueda</p>
-                `;
-            } else if (message) {
-                message.remove();
-            }
         }
 
         // ============================================
@@ -1786,7 +1753,7 @@ header, .hero, .products-section, footer {
         }
 
         function contactProductWhatsApp(productId) {
-            const producto = productos[productId];
+            const producto = productos.find(p => p.id === productId);
             if (!producto) return;
 
             const message = `Hola! Estoy interesado en el producto: ${producto.nombre} ($${producto.precio.toFixed(2)})\n\n¿Podrías darme más información?`;
@@ -1808,37 +1775,48 @@ header, .hero, .products-section, footer {
         }
 
         // ============================================
-        // NAVEGACIÓN DE IMÁGENES EN PRODUCTOS
+        // NAVEGACIÓN DE IMÁGENES
         // ============================================
-        function setupImageNavigation() {
-            document.querySelectorAll('.product-card').forEach(card => {
-                const dots = card.querySelectorAll('.image-dot');
-                const mainImg = card.querySelector('.product-main-img');
-                
-                if (!dots.length || !mainImg) return;
-
-                // Guardar todas las imágenes del producto
-                const productId = card.getAttribute('data-id');
-                const producto = productos[productId];
-                
-                if (!producto || !producto.imagenes) return;
-
-                // Configurar cada punto
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', (e) => {
-                        e.stopPropagation(); // Evitar que se abra el modal
-                        if (producto.imagenes[index]) {
-                            // Cambiar imagen
-                            mainImg.src = producto.imagenes[index];
-                            
-                            // Actualizar puntos activos
-                            dots.forEach(d => d.classList.remove('active'));
-                            dot.classList.add('active');
-                        }
-                    });
+        function setupImageNavigation(card, producto) {
+            const dots = card.querySelectorAll('.image-dot');
+            const mainImg = card.querySelector('.product-main-img');
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (producto.imagenes[index]) {
+                        mainImg.src = producto.imagenes[index];
+                        dots.forEach(d => d.classList.remove('active'));
+                        dot.classList.add('active');
+                    }
                 });
             });
         }
+
+        // ============================================
+        // INSTRUCCIONES PARA AGREGAR PRODUCTOS/CATEGORÍAS
+        // ============================================
+        /*
+        PARA AGREGAR UNA NUEVA CATEGORÍA:
+        1. En el array "categorias" (línea 733), añade:
+            { id: "electronica", nombre: "Electrónica", icono: "fas fa-gamepad" }
+
+        PARA AGREGAR UN NUEVO PRODUCTO:
+        1. En el array "productos" (línea 742), añade:
+            {
+                id: 6, // Cambia el número
+                nombre: "Nombre del Producto",
+                precio: 99.99,
+                precioOriginal: 129.99, // Opcional
+                categoria: "electronica", // Debe coincidir con categoría existente
+                descripcion: "Descripción",
+                caracteristicas: ["Característica 1", "Característica 2"],
+                stock: 10,
+                imagenes: ["https://url-imagen.com"],
+                badge: "Oferta", // Opcional
+                searchTerms: ["palabra1", "palabra2"]
+            }
+        */
     </script>
 </body>
 </html>

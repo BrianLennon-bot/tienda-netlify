@@ -1184,57 +1184,91 @@
             { id: "ropa", nombre: "Ropa y Calzado", icono: "fas fa-tshirt" },
             { id: "hogar", nombre: "Hogar", icono: "fas fa-home" },
             { id: "smartwatch", nombre: "Smartwatch", icono: "fas fa-clock" },
-            { id: "telefonos", nombre: "Teléfonos", icono: "fas fa-mobile-alt" }
+            { id: "teclados", nombre: "Teclados", icono: "fa-solid fa-music" }
         ];
 
         // PRODUCTOS (Agrega nuevos productos aquí)
         const productos = [
             {
                 id: 1,
-                nombre: "iPhone 14 Pro Max 256GB",
+                nombre: "Yamaha P45",
                 precio: 1299.99,
-                precioOriginal: 1499.99,
-                categoria: "telefonos",
-                descripcion: "iPhone 14 Pro Max con Dynamic Island, cámara de 48MP, pantalla Super Retina XDR de 6.7 pulgadas y chip A16 Bionic. Color Space Black. Incluye cargador y funda.",
-                caracteristicas: ["256GB", "iOS 16", "Cámara 48MP", "Pantalla 6.7\"", "A16 Bionic", "Batería de larga duración"],
-                stock: 8,
+                //precioOriginal: 1499.99,
+                categoria: "teclados",
+                caracteristicas: ["Color: Negro", "Número de teclas: 88", "Nivel de habilidad: Intermedio", "Características espeiales: Acción martillo, Altavoz incorporado, Conector para audriculares, Modo dividido"],
+                descripcion: ` 
+                    <ul>
+                        <li> Sensación de teclado de piano acústico: las teclas sensibles al tacto permiten interpretaciones dinámicas. La acción del teclado ponderado de 88 teclas replica la experiencia del piano acústico.</li>
+                        <li> Variedad de sonidos de instrumentos - Elige entre 10 voces únicas, incluyendo la riqueza y resonancia de un piano de cola Yamaha, con sonido completamente inmersivo y graves profundos. </li>
+                        <li> Fácil control: operación simple con un solo botón y funcionalidad optimizada diseñada para mantenerte enfocado en tu música. </li> 
+                        <li> Piano digital musical: perfecto para principiantes que buscan desarrollar sus habilidades. </li>
+                        <li> El interruptor de pedal de sustain incluido permite variaciones sutiles y mayor expresión en tus actuaciones. </li>
+                    </ul> 
+                 `,
+                //stock: 8,
                 imagenes: [
-                    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&q=80",
-                    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&q=80",
-                    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&q=80"
+                    "images/TecladoYamahaP45/YamahaP45.jpeg",
+                    "images/TecladoYamahaP45/YamahaP45-2.jpeg",
+                    "images/TecladoYamahaP45/YamahaP45-3.jpeg"
                 ],
                 badge: "Oferta",
-                searchTerms: ["iphone", "smartphone", "apple", "movil", "telefono"]
+                //searchTerms: ["iphone", "smartphone", "apple", "movil", "telefono"] 
             },
             {
                 id: 2,
-                nombre: "Zapatillas Adidas Ultraboost",
+                nombre: "Yamaha P71",
                 precio: 149.99,
-                categoria: "ropa",
-                descripcion: "Zapatillas para running Adidas Ultraboost con tecnología Boost para máxima amortiguación. Suela Continental para mejor tracción en cualquier superficie. Disponible en tallas 38-44.",
-                caracteristicas: ["Amortiguación Boost", "Suela Continental", "Material transpirable", "Para running"],
-                stock: 15,
+                //precioOriginal: 599,
+                categoria: "teclados",
+                caracteristicas: ["Acción de martillo", "Altavoz incorporado", "Modo Duo", "Teclas calibradas", "Varias voces"],
+                descripcion: ` 
+                    <ul>
+                        <li>Sensación de piano acústico: las teclas sensibles al tacto permiten una verdadera expresión y un rendimiento dinámico. La acción ponderada replica la experiencia del piano acústico. </li>
+                        <li>Sonido elevado: elige entre 10 voces únicas, incluyendo la riqueza y resonancia de un piano de cola Yamaha, con sonido dinámico completo y graves profundos. </li>
+                        <li> Control sin esfuerzo: funcionamiento simple con un solo botón y funcionalidad optimizada diseñada para mantenerte concentrado en tu música </li>
+                        <li> Sonido en capas: el modo dual te permite mezclar dos voces, como piano y cuerdas, creando un sonido rico en capas para una nueva experiencia de juego inspiradora  </li> 
+                        <li> El pedal de sostenimiento incluido permite variaciones sutiles y una mayor expresión en tus actuaciones  </li>
+                    </ul>
+                `,
+                //stock: 15,
                 imagenes: [
-                    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80",
-                    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80"
+                    "images/TecladoYamahaP71/YamahaP71-1.jpeg",
+                    "images/TecladoYamahaP71/YamahaP71-2.jpeg"
                 ],
                 badge: "Nuevo",
                 searchTerms: ["zapatillas", "adidas", "deporte", "running", "calzado"]
             },
             {
                 id: 3,
-                nombre: "Laptop Dell XPS 15 i7",
+                nombre: "Alesis Recital Play",
                 precio: 1899.99,
                 precioOriginal: 2199.99,
-                categoria: "tecnologia",
-                descripcion: "Laptop Dell XPS 15 con procesador Intel Core i7 de 13va generación, 16GB RAM, 1TB SSD y pantalla 4K OLED táctil. Ideal para diseño, programación y gaming.",
-                caracteristicas: ["i7 13va gen", "16GB RAM", "1TB SSD", "Pantalla 4K OLED", "Windows 11 Pro", "NVIDIA RTX 3050"],
-                stock: 5,
+                categoria: "teclados",
+                descripcion:` 
+                    <ul>
+                        <li> El teclado de práctica definitivo para principiantes. Teclado de música portátil, ligero y fácil de usar con altavoces incorporados que ofrecen un sonido rico para una experiencia de juego auténtica e inspiradora  </li>
+                        <li> 88 Teclas para el Éxito - Las 88 teclas de tamaño completo del piano eléctrico, sensibles al tacto, de estilo piano simulan un sonido de piano acústico, ideal para todas las edades para desarrollar fuerza y destreza en los dedos  </li>
+                        <li> Biblioteca de sonidos masiva: disfruta de 480 sonidos realistas, reverberación FX fácilmente ajustable, modo de canción de un solo toque con 160 ritmos para crear y grabar canciones en muchos géneros, y 140 canciones de demostración incorporadas  </li>
+                        <li> Características educativas: incluye innovadores modos de división, lección y grabación, para que el estudiante y el profesor puedan tocar juntos y grabar interpretaciones, un metrónomo integrado y una función de transposición fácil  </li>
+                        <li> Conexión USB-MIDI: simplemente conecta el Recital Play a un Mac o PC para utilizar la mayoría de los programas de grabación y educación de piano, como las lecciones premium incluidas de Skoove y Melodics  </li>
+                        <li> Bien conectado: incluye una entrada de pedal de resonancia de 1/4", entrada AUX de 1/8" para conectar un micrófono, teléfono móvil o tableta, y una salida de auriculares de 1/8" para silenciar los altavoces internos para practicar en privado </li>
+                        <li> Paquete completo de accesorios: Recital Play, soporte de teclado con altura ajustable, soporte para partituras/tableta, pedal de sostenimiento auriculares, estuche de transporte, fuente de alimentación </li>
+                        <li> Toca dondequiera que vayas: alimenta el teclado a través del adaptador de corriente incluido o 6 pilas AA (no incluidas) para seguir practicando y aprendiendo dondequiera que vayas  </li> 
+
+                    </ul>
+                `,
+                caracteristicas: ["Numero de teclas: 88", "Nivel de habilidad: Principiante", "Altavoz incorporado", "Conector para auriculares", "Ligero", "Portátil y Teclas táctiles", "88 llaves y accesorios"],
+                //stock: 5,
                 imagenes: [
-                    "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80"
+                    "images/TecladoAlesisRecital/AlesisRecital-1.jpeg", 
+                    "images/TecladoAlesisRecital/AlesisRecital-2.jpeg",
+                    "images/TecladoAlesisRecital/AlesisRecital-3.jpeg",
+                    "images/TecladoAlesisRecital/AlesisRecital-4.jpeg",
+                    "images/TecladoAlesisRecital/AlesisRecital-5.jpeg",
+
                 ],
                 badge: "Oferta",
-                searchTerms: ["laptop", "dell", "computadora", "portatil"]
+                //searchTerms: ["laptop", "dell", "computadora", "portatil"]
             },
             {
                 id: 4,

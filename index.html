@@ -1131,7 +1131,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2024 MiTiendaOnline. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Altiora. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -1185,7 +1185,9 @@
             //{ id: "hogar", nombre: "Hogar", icono: "fas fa-home" },
             //{ id: "smartwatch", nombre: "Smartwatch", icono: "fas fa-clock" },
             { id: "teclados", nombre: "Teclados", icono: "fa-solid fa-music" },
-            { id: "drum", nombre: "Drum", icono: "fa-solid fa-drum" }
+            { id: "drum", nombre: "Drum", icono: "fa-solid fa-drum" },
+            { id: "bajo", nombre: "Bajos", icono: "fa-solid fa-guitar" },
+            { id: "guitarra", nombre: "Guitarras", icono: "fa-solid fa-guitar" },
         ];
 
         // PRODUCTOS (Agrega nuevos productos aquí)
@@ -1193,7 +1195,7 @@
             {
                 id: 1,
                 nombre: "Yamaha P45",
-                precio: 1299.99,
+                precio: 940,
                 //precioOriginal: 1499.99,
                 categoria: "teclados",
                 caracteristicas: ["Color: Negro", "Número de teclas: 88", "Nivel de habilidad: Intermedio", "Características espeiales: Acción martillo, Altavoz incorporado, Conector para audriculares, Modo dividido"],
@@ -1218,7 +1220,7 @@
             {
                 id: 2,
                 nombre: "Yamaha P71 ",
-                precio: 149.99,
+                precio: 990,
                 //precioOriginal: 599,
                 categoria: "teclados",
                 caracteristicas: ["Acción de martillo", "Altavoz incorporado", "Modo Duo", "Teclas calibradas", "Varias voces"],
@@ -1233,8 +1235,10 @@
                 `,
                 //stock: 15,
                 imagenes: [
-                    "images/Teclados/YamahaP71-1.jpeg",
-                    "images/Teclados/YamahaP71-2.jpeg"
+                        "images/Teclados/YamahaP71-2.jpeg",
+                        "images/Teclados/YamahaP71-1.jpeg",
+                        "images/Teclados/teclado22.jpeg",
+                    
                 ],
                 badge: "Nuevo",
                 searchTerms: ["zapatillas", "adidas", "deporte", "running", "calzado"]
@@ -1242,7 +1246,7 @@
             {
                 id: 3,
                 nombre: "Alesis Recital Play",
-                precio: 1899.99,
+                precio: 600,
                 precioOriginal: 2199.99,
                 categoria: "teclados",
                 descripcion:` 
@@ -1409,6 +1413,7 @@
                // stock: 25,
                 imagenes: [
                     "images/Teclados/teclado7.jpeg",
+                    "images/Teclados/teclado30.jpeg",
                     
                 ],
                 badge: "Hot",
@@ -1416,15 +1421,18 @@
             },
             {
                 id: 13,
-                nombre: "",
+                nombre: "Yamaha PSR-EW-425",
                 precio: 970,
                 //precioOriginal: 49.99,
                 categoria: "teclados",
-               // descripcion: "Camiseta deportiva Nike Dri-FIT para hombre. Tecnología que absorbe el sudor y se seca rápido. Disponible en colores negro, blanco y azul. Tallas S, M, L, XL.",
+                descripcion: "Talla : 76 Teclas, Las perillas asignables te permiten manipular varios efectos y parámetros en voces, estilos y más, en tiempo real. ¡Mega Boost añade +6dB de volumen potenciado!. El Efecto de Movimiento modifica las voces en tu interpretación con efectos de Filtro, Pitch y Modulación mientras mantienes presionado el botón Efecto de Movimiento. Muestreo rápido a USB o memoria interna para una recuperación instantánea en el momento justo!. La entrada de micrófono de 1/4 te permite conectar un micrófono para que puedas cantar mientras tocas, escuchar tu voz a través de los altavoces del instrumento e incluso grabar tu rendimiento en audio USB.",
                 //caracteristicas: ["Material Dri-FIT", "Absorbe sudor", "Secado rápido", "Tallas S-XL"],
                // stock: 25,
                 imagenes: [
                     "images/Teclados/teclado9.jpeg",
+                    "images/Teclados/teclado14.jpeg",
+                    "images/Teclados/teclado15.jpeg",
+                    "images/Teclados/teclado16.jpeg", 
                     
                 ],
                 badge: "Popular",
@@ -1459,7 +1467,376 @@
                     "images/Teclados/teclado11.jpeg",
                     
                 ],
+                badge: "Más Vendido",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 16,
+                nombre: "Yamaha P143",
+                precio: 1050,
+                //precioOriginal: 49.99,
+                categoria: "teclados",
+                descripcion: "Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Teclados/teclado12.jpeg",
+                    "images/Teclados/teclado13.jpeg",
+                    "images/Teclados/teclado17.jpeg",
+                    
+                ],
                 badge: "Popular",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 17,
+                nombre: "Alesis Recital Play",
+                precio: 500,
+                //precioOriginal: 49.99,
+                categoria: "teclados",
+                descripcion: "88 claves para el éxito: las 88 teclas de tamaño completo del piano eléctrico, sensibles al tacto, simulan un sonido de piano acústico. Ideal para todas las edades para desarrollar fuerza y destreza de los dedos. Biblioteca de sonidos masiva: disfruta de 480 sonidos realistas, reverberación FX fácilmente ajustable, modo de canción de un solo toque con 160 ritmos para crear y grabar canciones en muchos géneros, y 140 canciones de demostración incorporadas. Características educativas: incluye innovadores modos de división, lección y grabación, para que el estudiante y el profesor puedan jugar juntos y grabar actuaciones, un metrónomo integrado y una función de transposición fácil. Conexión USB-MIDI: simplemente conecta el Recital Play a una Mac o PC para utilizar la mayoría de software de piano",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Teclados/teclado18.jpeg",
+                    "images/Teclados/teclado19.jpeg",
+                    "images/Teclados/teclado20.jpeg",
+                    "images/Teclados/teclado21.jpeg",
+                    
+                ],
+                badge: "Popular",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 18,
+                nombre: "Yamaha PSR-E473",
+                precio: 870,
+                //precioOriginal: 49.99,
+                categoria: "teclados",
+               //descripcion: "88 claves para el éxito: las 88 teclas de tamaño completo del piano eléctrico, sensibles al tacto, simulan un sonido de piano acústico. Ideal para todas las edades para desarrollar fuerza y destreza de los dedos. Biblioteca de sonidos masiva: disfruta de 480 sonidos realistas, reverberación FX fácilmente ajustable, modo de canción de un solo toque con 160 ritmos para crear y grabar canciones en muchos géneros, y 140 canciones de demostración incorporadas. Características educativas: incluye innovadores modos de división, lección y grabación, para que el estudiante y el profesor puedan jugar juntos y grabar actuaciones, un metrónomo integrado y una función de transposición fácil. Conexión USB-MIDI: simplemente conecta el Recital Play a una Mac o PC para utilizar la mayoría de software de piano",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Teclados/teclado23.jpeg",
+                    "images/Teclados/teclado24.jpeg",
+                    "images/Teclados/teclado25.jpeg",
+                    "images/Teclados/teclado26.jpeg",
+                    
+                ],
+                badge: "Hot",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 19,
+                nombre: "Yamaha PSR-E473",
+                precio: 590,
+                //precioOriginal: 49.99,
+                categoria: "teclados",
+                descripcion: "AKLOT Piano de teclado ponderado portátil: piano digital para principiantes con acción de martillo de 88 teclas, pedal triple eléctrico y soporte de música, 128 tonos, libro de lecciones, auriculares",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Teclados/teclado27.jpeg",
+                    "images/Teclados/teclado28.jpeg",
+                    "images/Teclados/teclado29.jpeg",
+                    
+                    
+                ],
+                badge: "Popular",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 20,
+                nombre: "Korg Krome",
+                precio: 1750,
+                //precioOriginal: 49.99,
+                categoria: "teclados",
+                descripcion: "Teclado	88 teclas con acción de martillo NH. Sintetizador	Motor EDS-X con sonidos KRONOS-derivados. Sonidos	640 programas + 288 combinaciones. Polyfonía	Hasta 120 voces. Pantalla	7″ TouchView color. Efectos	5 + 2 + 1 con EQ por pista. Conectividad	USB-MIDI, MIDI I/O, pedal, SD. Extras	Drum Track, secuenciador, editor de PC",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Teclados/teclado32.jpeg",
+                    "images/Teclados/teclado31.jpeg",
+                    
+                    
+                    
+                    
+                ],
+                badge: "Popular",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 21,
+                nombre: "Yamaha MX88",
+                precio: 1800,
+                //precioOriginal: 49.99,
+                categoria: "teclados",
+                descripcion: "La acción ponderada GHS de 88 notas es más pesada en las teclas bajas y más ligera en las teclas altas, al igual que un piano acústico. Audio/MIDI USB compatible con su clase para una verdadera conectividad plug and play sin instalar ningún controlador; Tempo (BPM): 5-300. Motor de sonido de motivo: capa, zona, cambio, ciclo, aleatoriza y controla hasta 8 elementos en una sola voz. El modelado de circuitos virtuales (vcm) recrea el sonido y el comportamiento de los efectos antiguos y los procesadores de señal. Muestra LED de 3 dígitos + LCD de caracteres de 20 x 2 líneas (retroiluminado), 128 notas de polifonía garantizan un rendimiento sin abandono jugando en vivo o con secuencias completas de 16 pistas",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Teclados/teclado33.jpeg",
+                    "images/Teclados/teclado34.jpeg",
+                    
+                    
+                    
+                    
+                ],
+                badge: "Popular",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 22,
+                nombre: "Ktaxon",
+                precio: 320,
+                //precioOriginal: 49.99,
+                categoria: "bajo",
+                descripcion: "Ktaxon Bajo eléctrico de 6 cuerdas, bajo eléctrico activo con pastilla profesional H-H, selector de pastilla de 3 vías, cable premium, diseño de cuerpo único",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Bajos/bajo1.jpeg",
+                    "images/Bajos/bajo2.jpeg",
+                    
+                    
+                    
+                    
+                ],
+                badge: "Popular",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 23,
+                nombre: "Ktaxon",
+                precio: 330,
+                //precioOriginal: 49.99,
+                categoria: "bajo",
+                descripcion: "Ktaxon Bajo eléctrico de 6 cuerdas, bajo eléctrico activo con pastilla profesional H-H, selector de pastilla de 3 vías, cable premium, diseño de cuerpo único",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Bajos/bajo3.jpeg",
+                    "images/Bajos/bajo4.jpeg",
+                    
+                    
+                    
+                    
+                ],
+                badge: "Popular",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 24,
+                nombre: "Donner",
+                precio: 630,
+                //precioOriginal: 49.99,
+                categoria: "drum",
+                descripcion: "Juego de batería eléctrica, DED-70 Kit de batería electrónica con 150 sonidos, 4 almohadillas de malla silenciosa, platillos de 9 pulgadas, USB MIDI, carga tipo C, 2 pedales",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Drum/drum8.jpeg",
+                    "images/Drum/drum4.jpeg",
+                    "images/Drum/drum5.jpeg",
+                    "images/Drum/drum6.jpeg",
+                    "images/Drum/drum7.jpeg",
+                    "images/Drum/drum9.jpeg",
+                    "images/Drum/drum10.jpeg",
+                    
+                    
+                    
+                    
+                ],
+                badge: "Oferta",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 25,
+                nombre: "MOSEN",
+                precio: 595,
+                //precioOriginal: 49.99,
+                categoria: "drum",
+                descripcion: "Juego de batería eléctrica con 4 almohadillas de malla silenciosa, platillos, baquetas, auriculares, USB MIDI, pedales, más de 195 sonidos y 25 kits de batería.",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Drum/drum11.jpeg",
+                    "images/Drum/drum12.jpeg",
+                    "images/Drum/drum13.jpeg",
+                    "images/Drum/drum14.jpeg",
+                    "images/Drum/drum15.jpeg",
+                    
+                    
+                    
+                    
+                    
+                ],
+                badge: "Oferta",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 26,
+                nombre: "AODSK",
+                precio: 600,
+                //precioOriginal: 49.99,
+                categoria: "drum",
+                descripcion: "Batería eléctrica con 150 sonidos, 4 almohadillas silenciosas, 2 pedales, silla, baquetas, auriculares.",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Drum/drum16.jpeg",
+                    "images/Drum/drum17.jpeg",
+                    "images/Drum/drum18.jpeg",
+                    "images/Drum/drum19.jpeg",
+                    
+                    
+                    
+                    
+                    
+                ],
+                badge: "Nuevo",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 27,
+                nombre: "Alesis",
+                precio: 610,
+                //precioOriginal: 49.99,
+                categoria: "drum",
+                descripcion: "Módulo de batería DM-Lite con 10 kits y 120 sonidos a elegir. El trono del tambor, palos, auriculares, cableado, bombo, pedales de piso de hi-hat y estante de montaje de metal resistente están incluidos.  El kit BLAZE incluye (4) tambores de cabeza de malla ajustable de 6 pulgadas, (3) platillos de 10 pulgadas, estante de batería Blaze, módulo de sonido Blaze, (4) almohadillas de batería de 6 pulgadas/6.0 in, (3) postes de platillo, (2) pedales de piso (hi-hat and kick), serpiente de cable, (2) palos, taburete de batería, auriculares, llave de tambor.",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Drum/drum21.jpeg",
+                    "images/Drum/drum22.jpeg",
+                    "images/Drum/drum24.jpeg",
+                    "images/Drum/drum25.jpeg",
+                    "images/Drum/drum26.jpeg",
+                    
+                    
+                    
+                    
+                    
+                ],
+                badge: "Nuevo",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 28,
+                nombre: "Ludwig",
+                precio:  1450,
+                //precioOriginal: 49.99,
+                categoria: "drum",
+                descripcion: "La batería Ludwig BackBeat Complete de 5 piezas con hardware y platillos proporciona a los bateristas una opción robusta pero asequible para crear ritmos en cualquier género musical. Este conjunto completo incluye carcasas de madera dura de 7 capas en un popular bombo de 22, toms de rack de 10 y 12, un tom de piso de 16 y una configuración de tambor de caja de 14. Combinado con un hi-hat de doble refuerzo y platillo crash/ride, y todo el hardware necesario, el conjunto BackBeat permite a los bateristas de cualquier nivel de habilidad explorar un espectro de tonos. Las carcasas de madera dura de 7 capas proporcionan una base sólida. En el corazón del sonido potente y articulado del BackBeat hay carcasas de madera dura de 7 capas con bordes de 45 grados.",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Drum/drum29.jpeg",
+                    "images/Drum/drum27.jpeg",
+                    "images/Drum/drum28.jpeg",
+                    "images/Drum/drum30.jpeg",
+                    "images/Drum/drum31.jpeg",
+                    ],
+                badge: "Nuevo",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 29,
+                nombre: "",
+                precio:  1350,
+                //precioOriginal: 49.99,
+                categoria: "drum",
+                descripcion: "Es por eso que nos complace ofrecerle la batería completa de 5 piezas de PDP Center Stage. Las conchas están hechas de álamo, que ofrece un tono resonante y cálido que te encantará. Esta batería tiene un valor increíble, ya que se envía  con hardware que normalmente está reservado para los tambores de gama alta de PDP. El gran tono y el hardware de primera categoría del kit Center Stage se combinan con un acabado llamativo para que sea imprescindible para cualquier baterista. Esta batería está lista para ser tocada, todo lo que tienes que hacer es configurar la batería a tu gusto y rockear.",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Drum/drum36.jpeg",
+                    "images/Drum/drum32.jpeg",
+                    "images/Drum/drum33.jpeg",
+                    "images/Drum/drum34.jpeg",
+                    "images/Drum/drum35.jpeg",
+                    "images/Drum/drum37.jpeg",
+                    "images/Drum/drum38.jpeg",
+                    ],
+                badge: "Popular",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 30,
+                nombre: "Ktaxon",
+                precio:  280,
+                //precioOriginal: 1400,
+                categoria: "bajo",
+                descripcion: " Bajo eléctrico de 5 cuerdas, tamaño completo, kit estándar de mano derecha con diapasón de palisandro, incluye bolsa de concierto, correa, cable y herramienta de llave",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Bajos/bajo5.jpeg",
+                    "images/Bajos/bajo6.jpeg",
+                    "images/Bajos/bajo7.jpeg",
+                    
+                    
+                    ],
+                badge: "Nuevo",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 31,
+                nombre: "",
+                precio:  1470,
+                //precioOriginal: 1400,
+                categoria: "drum",
+                descripcion: "Es por eso que nos complace ofrecerle la batería completa de 5 piezas de PDP Center Stage. Las conchas están hechas de álamo, que ofrece un tono resonante y cálido que te encantará. Esta batería tiene un valor increíble, ya que se envía  con hardware que normalmente está reservado para los tambores de gama alta de PDP. El gran tono y el hardware de primera categoría del kit Center Stage se combinan con un acabado llamativo para que sea imprescindible para cualquier baterista. Esta batería está lista para ser tocada, todo lo que tienes que hacer es configurar la batería a tu gusto y rockear.",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Drum/drum42.jpeg",
+                    "images/Drum/drum39.jpeg",
+                    "images/Drum/drum40.jpeg",
+                    "images/Drum/drum41.jpeg",
+                    "images/Drum/drum43.jpeg",
+                    "images/Drum/drum44.jpeg",
+                    "images/Drum/drum45.jpeg",
+                    ],
+                badge: "Oferta",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 32,
+                nombre: "Ktaxon",
+                precio: 260,
+                //precioOriginal: 1400,
+                categoria: "bajo",
+                descripcion: " Bajo Eléctrico de 4 Cuerdas,  Full Size Estándar para Diestros con Diapasón de Palisandro, Kit con Herramienta de Llave para Cables",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Bajos/bajo9.jpeg",
+                    "images/Bajos/bajo8.jpeg",
+                    
+                    
+                    
+                    ],
+                badge: "Nuevo",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 33,
+                nombre: "Ktaxon",
+                precio: 250,
+                //precioOriginal: 1400,
+                categoria: "guitarra",
+                descripcion: "Guitarra Acústico-Eléctrica de 41 pulgadas, guitarra con cutaway de 6 cuerdas con preamplificador de bajo EQ-7545R con ecualizador de cuatro bandas, diseño único de espalda redonda.",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Guitarras/guitarra1.jpeg",
+                    "images/Guitarras/guitarra2.jpeg",
+                    "images/Guitarras/guitarra3.jpeg",
+                    "images/Guitarras/guitarra4.jpeg",
+                    
+                    ],
+                badge: "Nuevo",
                // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
             },
         ];

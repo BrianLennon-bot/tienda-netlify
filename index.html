@@ -3430,7 +3430,7 @@ function prevSlide() {
 function startAutoplay() {
     if (slideInterval) clearInterval(slideInterval);
     slideInterval = setInterval(() => {
-        showSlide(currentSlide + 1);
+        showSlide(currentSlide + 1) ;
     }, 5000); // Cambia cada 5 segundos
 }
 

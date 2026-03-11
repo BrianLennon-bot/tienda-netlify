@@ -6,6 +6,21 @@
     <title>Altiora</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+<link rel="icon" type="image/png" href="images/logo.jpeg">
+<link rel="apple-touch-icon" href="images/logo.jpeg">
+<!-- Open Graph / Redes Sociales -->
+<meta property="og:title" content="Altiora - Instrumentos Musicales">
+<meta property="og:description" content="Las mejores ofertas en instrumentos musicales">
+<meta property="og:image" content="https://https://brianlennon-bot.github.io/altiora.com/images/logo.png">
+<meta property="og:url" content="https://https://brianlennon-bot.github.io/altiora.com/">
+<meta property="og:type" content="website">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Altiora - Instrumentos Musicales">
+<meta name="twitter:description" content="Las mejores ofertas en instrumentos musicales">
+<meta name="twitter:image" content="https://https://brianlennon-bot.github.io/altiora.com//images/logo.png">
 <style>
     /* ===== RESET Y ESTILOS GENERALES ===== */
 * {
@@ -85,6 +100,7 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    gap: 12px;
     font-size: 26px;
     font-weight: 800;
     color: #002868;
@@ -97,11 +113,30 @@ header {
     transform: scale(1.02);
 }
 
-.logo i {
-    margin-right: 12px;
-    font-size: 32px;
-    color: #37bf0a;
-    filter: drop-shadow(0 2px 4px rgba(191, 10, 48, 0.3));
+.logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Esto hace la imagen redonda */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien al círculo */
+    border: 2px solid #37bf0a; /* Borde verde opcional */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo-text {
+    color: #002868;
+    font-weight: 800;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
 }
 
 .header-right {
@@ -382,13 +417,14 @@ header {
     background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: brightness(0.7) contrast(1.1);
+    filter: brightness(0.95) contrast(1.05);
 }
 
 .carousel-slide.active {
     opacity: 1;
 }
 
+/* Overlay oscuro para mejorar legibilidad del texto */
 /* Overlay oscuro para mejorar legibilidad del texto */
 .hero::before {
     content: '';
@@ -397,7 +433,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 40, 104, 0.85) 0%, rgba(10, 46, 92, 0.8) 60%, rgba(26, 63, 110, 0.85) 100%);
+    background: linear-gradient(135deg, rgba(0, 40, 104, 0.3) 0%, rgba(10, 46, 92, 0.25) 60%, rgba(26, 63, 110, 0.3) 100%);
     z-index: 1;
     pointer-events: none;
 }
@@ -592,7 +628,7 @@ header {
     font-size: 18px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255, 215, 0, 0.3);
-    box-shadow: 0 8px 25px rgba(191, 10, 48, 0.3);
+    box-shadow: 0 8px 25px rgba(7, 200, 65, 0.747);
     position: relative;
     overflow: hidden;
 }
@@ -611,7 +647,7 @@ header {
 .whatsapp-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 35px rgba(191, 10, 48, 0.5);
-    background: linear-gradient(135deg, #a00828, #8b0622);
+    background: linear-gradient(135deg, #37bf0a, #37bf0a);
 }
 
 .whatsapp-btn:hover::before {
@@ -1796,8 +1832,8 @@ footer::before {
                 </button>
                 
                 <a href="#" class="logo">
-                    <i class="fas fa-shopping-bag"></i>
-                    Altiora
+                <img src="images/logo.jpeg" alt="Altiora" class="logo-img">
+                <span class="logo-text">Altiora</span>
                 </a>
                 
                 <div class="header-right">
@@ -1818,7 +1854,7 @@ footer::before {
     </header>
 
     <!-- Hero Section -->
-    <!-- Hero Section con Carrusel -->
+   <!-- Hero Section con Carrusel -->
 <section class="hero" id="hero">
     <!-- Carrusel de imágenes -->
     <div class="hero-carousel" id="heroCarousel">
@@ -1846,14 +1882,15 @@ footer::before {
         <span class="carousel-dot" data-index="3"></span>
     </div>
     
-    <div class="container">
+    <!-- ELIMINA TODO ESTO: -->
+    <!-- <div class="container">
         <h1>Las Mejores Ofertas Online</h1>
         <p>Encuentra los mejores instrumentos musicales al mejor precio.</p>
         <a href="https://wa.me/5351454636" class="whatsapp-btn" target="_blank">
             <i class="fab fa-whatsapp"></i>
             Contactar por WhatsApp
         </a>
-    </div>
+    </div> -->
 </section>
 
     <!-- Productos -->
@@ -2682,6 +2719,23 @@ footer::before {
                     
                     ],
                 badge: "Nuevo",
+               // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
+            },
+            {
+                id: 38,
+                nombre: "Aodsk",
+                precio: 400,
+                //precioOriginal: 1400,
+                categoria: "teclados",
+                descripcion: "Piano de teclado de 88 teclas, piano digital portátil para principiantes, 128 tonos, 128 ritmos, 20 canciones de demostración, con pedal de sostenido, estuche de transporte.",
+               //caracteristicas: ["Características especiales, Acción de martillo, Altavoz incorporado, Compacto, Conector para auriculares, Modo Duo, Portátil, Refuerzo de sonido"],
+               // stock: 25,
+                imagenes: [
+                    "images/Teclados/teclado42.jpeg",
+                    "images/Teclados/teclado41.jpeg",
+                    
+                    ],
+                badge: "Oferta",
                // searchTerms: ["camiseta", "nike", "deportiva", "ropa"]
             },
         ];
